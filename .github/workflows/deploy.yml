@@ -21,8 +21,17 @@ jobs:
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
-            cd ~/message
+            cd /home/kishore/smms
+
+            echo "Pulling latest code..."
             git pull origin main
+
+            echo "Installing dependencies..."
             npm install
+
+            echo "Restarting Node.js application..."
             pm2 restart student-mark || pm2 start server.js --name student-mark
+
             pm2 save
+
+            echo "Deployment completed successfully!"
