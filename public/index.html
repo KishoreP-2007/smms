@@ -1,84 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Mark Management 📚 </title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Mark Management</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+
+  <!-- Header -->
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div>
+
+        <p class="eyebrow">🎓 ACADEMIC MANAGEMENT PORTAL</p>
+
+        <h1>📚 Student Mark Management</h1>
+
+        <p class="subtitle">
+          📊 Manage marks, review performance and view detailed student profiles.
+        </p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <span id="studentCount">0</span>
+
+        <small>👥 Total Students</small>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- Dashboard -->
+    <section class="dashboard-grid">
+
+      <div class="metric-card">
+
+        <div class="metric-icon">📈</div>
+
         <div>
-            <p class="eyebrow">ACADEMIC PORTAL</p>
-            <h1>Student Mark Management</h1>
-            <p class="subtitle">Manage student marks, calculate results and search records.</p>
+
+          <span id="averageScore">0</span>
+
+          <small>📊 Average Score</small>
+
         </div>
-        <div class="stat-card">
-            <span id="studentCount">0</span>
-            <small>Students</small>
+
+      </div>
+
+
+      <div class="metric-card">
+
+        <div class="metric-icon">🏆</div>
+
+        <div>
+
+          <span id="topGrade">-</span>
+
+          <small>🥇 Top Grade</small>
+
         </div>
-    </header>
 
-<main>
-  <section class="dashboard-grid">
-    <div class="metric-card"><div class="metric-icon">Σ</div><div><span id="averageScore">0</span><small>Average Score</small></div></div>
-    <div class="metric-card"><div class="metric-icon">A+</div><div><span id="topGrade">-</span><small>Top Grade</small></div></div>
-    <div class="metric-card"><div class="metric-icon">✓</div><div><span id="passCount">0</span><small>Passing Students</small></div></div>
-  </section>
+      </div>
 
-  <section class="panel">
-    <div class="section-title">
-      <div><p class="eyebrow">STUDENT DIRECTORY</p><h2>Student Records</h2></div>
-      <span id="status">Loading...</span>
-    </div>
-    <div class="toolbar">
-      <div class="search-box"><span>⌕</span><input id="searchInput" type="text" placeholder="Search by name or roll number"></div>
-      <button id="searchBtn">Search</button>
-      <button id="showAllBtn" class="secondary">Show All</button>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Roll No</th><th>Student</th><th>Java</th><th>Python</th><th>DBMS</th><th>Web</th>
-          <th>Total</th><th>Average</th><th>Grade</th><th>Action</th>
-        </tr></thead>
-        <tbody id="studentTable"></tbody>
-      </table>
-    </div>
-  </section>
 
-  <section class="panel form-panel">
-    <div class="section-title"><div><p class="eyebrow">NEW RECORD</p><h2>Add Student</h2></div></div>
-    <form id="studentForm">
-      <input id="rollNo" placeholder="Roll Number" required>
-      <input id="name" placeholder="Student Name" required>
-      <input id="java" type="number" min="0" max="100" placeholder="Java" required>
-      <input id="python" type="number" min="0" max="100" placeholder="Python" required>
-      <input id="dbms" type="number" min="0" max="100" placeholder="DBMS" required>
-      <input id="web" type="number" min="0" max="100" placeholder="Web Technology" required>
-      <button type="submit">Add Student</button>
-    </form>
-    <p id="formMessage"></p>
-  </section>
-</main>
+      <div class="metric-card">
 
-<div id="profileModal" class="modal hidden">
-  <div class="modal-card">
-    <button class="close-btn" id="closeProfile" aria-label="Close">×</button>
-    <div class="profile-head">
-      <div class="avatar" id="profileAvatar">S</div>
-      <div><p class="eyebrow">STUDENT PROFILE</p><h2 id="profileName">Student</h2><p id="profileRoll">Roll No: -</p></div>
+        <div class="metric-icon">✅</div>
+
+        <div>
+
+          <span id="passCount">0</span>
+
+          <small>🎯 Passing Students</small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Student Records -->
+    <section class="panel">
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="eyebrow">📋 STUDENT DIRECTORY</p>
+
+          <h2>👨‍🎓 Student Records</h2>
+
+        </div>
+
+        <span id="status">⏳ Loading...</span>
+
+      </div>
+
+
+      <div class="toolbar">
+
+        <div class="search-box">
+
+          <span>🔍</span>
+
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search by name or roll number"
+          >
+
+        </div>
+
+
+        <button id="searchBtn">
+          🔎 Search
+        </button>
+
+
+        <button id="showAllBtn" class="secondary">
+          👥 Show All
+        </button>
+
+      </div>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>🆔 Roll No</th>
+              <th>👤 Student</th>
+              <th>☕ Java</th>
+              <th>🐍 Python</th>
+              <th>🗄️ DBMS</th>
+              <th>🌐 Web</th>
+              <th>➕ Total</th>
+              <th>📊 Average</th>
+              <th>🏆 Grade</th>
+              <th>⚙️ Action</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="studentTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- Add Student -->
+    <section class="panel form-panel">
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="eyebrow">➕ NEW RECORD</p>
+
+          <h2>👨‍🎓 Add Student</h2>
+
+        </div>
+
+      </div>
+
+
+      <form id="studentForm">
+
+        <input
+          id="rollNo"
+          placeholder="🆔 Roll Number"
+          required
+        >
+
+        <input
+          id="name"
+          placeholder="👤 Student Name"
+          required
+        >
+
+        <input
+          id="java"
+          type="number"
+          min="0"
+          max="100"
+          placeholder="☕ Java"
+          required
+        >
+
+        <input
+          id="python"
+          type="number"
+          min="0"
+          max="100"
+          placeholder="🐍 Python"
+          required
+        >
+
+        <input
+          id="dbms"
+          type="number"
+          min="0"
+          max="100"
+          placeholder="🗄️ DBMS"
+          required
+        >
+
+        <input
+          id="web"
+          type="number"
+          min="0"
+          max="100"
+          placeholder="🌐 Web Technology"
+          required
+        >
+
+        <button type="submit">
+          ➕ Add Student
+        </button>
+
+      </form>
+
+
+      <p id="formMessage"></p>
+
+    </section>
+
+  </main>
+
+
+  <!-- Student Profile Modal -->
+  <div id="profileModal" class="modal hidden">
+
+    <div class="modal-card">
+
+      <button
+        class="close-btn"
+        id="closeProfile"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <div class="profile-head">
+
+        <div class="avatar" id="profileAvatar">
+          S
+        </div>
+
+
+        <div>
+
+          <p class="eyebrow">
+            👤 STUDENT PROFILE
+          </p>
+
+          <h2 id="profileName">
+            Student
+          </h2>
+
+          <p id="profileRoll">
+            🆔 Roll No: -
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-summary">
+
+        <div>
+
+          <span id="profileAverage">
+            0
+          </span>
+
+          <small>
+            📊 Average
+          </small>
+
+        </div>
+
+
+        <div>
+
+          <span id="profileTotal">
+            0
+          </span>
+
+          <small>
+            📝 Total Marks
+          </small>
+
+        </div>
+
+
+        <div>
+
+          <span id="profileGrade">
+            -
+          </span>
+
+          <small>
+            🏆 Grade
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <h3>
+        📚 Subject Performance
+      </h3>
+
+
+      <div
+        id="profileSubjects"
+        class="subject-list"
+      ></div>
+
+
+      <div class="profile-actions">
+
+        <button
+          id="profileDelete"
+          class="delete-btn"
+        >
+          🗑️ Delete Student
+        </button>
+
+      </div>
+
     </div>
-    <div class="profile-summary">
-      <div><span id="profileAverage">0</span><small>Average</small></div>
-      <div><span id="profileTotal">0</span><small>Total Marks</small></div>
-      <div><span id="profileGrade">-</span><small>Grade</small></div>
-    </div>
-    <h3>Subject Performance</h3>
-    <div id="profileSubjects" class="subject-list"></div>
-    <div class="profile-actions"><button id="profileDelete" class="delete-btn">Delete Student</button></div>
+
   </div>
-</div>
-<script src="app.js"></script>
+
+
+  <script src="app.js"></script>
+
 </body>
+
 </html>
