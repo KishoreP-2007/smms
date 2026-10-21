@@ -1,0 +1,12 @@
+{
+  "name": "student-mark-management",
+  "version": "1.0.0",
+  "description": "Student Mark Management System using Node.js, Express and JSON",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

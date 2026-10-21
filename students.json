@@ -1,0 +1,42 @@
+[
+  {
+    "rollNo": "CT001",
+    "name": "Arun Kumar",
+    "java": 85,
+    "python": 90,
+    "dbms": 78,
+    "web": 88
+  },
+  {
+    "rollNo": "CT002",
+    "name": "Priya Sharma",
+    "java": 92,
+    "python": 86,
+    "dbms": 90,
+    "web": 95
+  },
+  {
+    "rollNo": "CT003",
+    "name": "Rahul Raj",
+    "java": 72,
+    "python": 68,
+    "dbms": 75,
+    "web": 70
+  },
+  {
+    "rollNo": "CT004",
+    "name": "Divya S",
+    "java": 95,
+    "python": 91,
+    "dbms": 89,
+    "web": 94
+  },
+  {
+    "rollNo": "CT005",
+    "name": "Karthik M",
+    "java": 61,
+    "python": 74,
+    "dbms": 67,
+    "web": 70
+  }
+]

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <p class="eyebrow">ACADEMIC PORTAL</p>
+            <h1>Student Mark Management</h1>
+            <p class="subtitle">Manage student marks, calculate results and search records.</p>
+        </div>
+        <div class="stat-card">
+            <span id="studentCount">0</span>
+            <small>Students</small>
+        </div>
+    </header>
+
+    <main>
+        <section class="panel">
+            <div class="toolbar">
+                <input id="searchInput" type="text" placeholder="Search by name or roll number">
+                <button id="searchBtn">Search</button>
+                <button id="showAllBtn" class="secondary">Show All</button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">RESULTS</p>
+                    <h2>Student Records</h2>
+                </div>
+                <span id="status">Loading...</span>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No</th>
+                            <th>Name</th>
+                            <th>Java</th>
+                            <th>Python</th>
+                            <th>DBMS</th>
+                            <th>Web</th>
+                            <th>Total</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel form-panel">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">ADD RECORD</p>
+                    <h2>Add Student</h2>
+                </div>
+            </div>
+
+            <form id="studentForm">
+                <input id="rollNo" placeholder="Roll Number" required>
+                <input id="name" placeholder="Student Name" required>
+                <input id="java" type="number" min="0" max="100" placeholder="Java" required>
+                <input id="python" type="number" min="0" max="100" placeholder="Python" required>
+                <input id="dbms" type="number" min="0" max="100" placeholder="DBMS" required>
+                <input id="web" type="number" min="0" max="100" placeholder="Web Technology" required>
+                <button type="submit">Add Student</button>
+            </form>
+            <p id="formMessage"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

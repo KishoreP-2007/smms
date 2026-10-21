@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #172033;
+}
+
+header {
+    background: #172554;
+    color: white;
+    padding: 38px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0 0 8px;
+    opacity: .7;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+.subtitle {
+    opacity: .8;
+}
+
+.stat-card {
+    background: rgba(255,255,255,.12);
+    padding: 18px 28px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-card span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main {
+    width: 86%;
+    max-width: 1250px;
+    margin: 28px auto;
+}
+
+.panel {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.06);
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #d5dbea;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+}
+
+.toolbar input {
+    flex: 1;
+}
+
+input:focus {
+    border-color: #2563eb;
+}
+
+button {
+    border: 0;
+    border-radius: 7px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+button.secondary {
+    background: #64748b;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+#status {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+th, td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #e7eaf0;
+    text-align: center;
+}
+
+th {
+    background: #eef2ff;
+    color: #172554;
+}
+
+.grade {
+    font-weight: bold;
+}
+
+.delete-btn {
+    background: #dc2626;
+    padding: 8px 12px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+form button {
+    grid-column: span 3;
+}
+
+#formMessage {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    form button {
+        grid-column: span 1;
+    }
+}
