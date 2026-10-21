@@ -3,7 +3,7 @@ name: Deploy Node.js App
 on:
   push:
     branches:
-      - update
+      - main
   workflow_dispatch:
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
             cd /home/kishore/smms
 
             echo "Pulling latest code..."
-            git pull origin update
+            git pull origin main
 
             echo "Installing dependencies..."
             npm install
